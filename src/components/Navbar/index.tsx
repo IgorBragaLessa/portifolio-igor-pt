@@ -43,7 +43,7 @@ export const NavBar = (): JSX.Element => {
             <Button
               type="icon"
               onClick={OpenMenu}
-              aria-label={!open ? "Abrir Menu" : "Fechar Menu"}
+              aria-label={!open ? "Abrir menu" : "Fechar menu"}
             >
               {!open ? <FaBars /> : <IoClose />}
             </Button>
@@ -61,16 +61,16 @@ export const NavLinks = (): JSX.Element => {
   return (
     <NavbarLinks>
       <Button type="btLink" as="a" color="grey4" href={`#home`}>
-        Home
+        Início
       </Button>
       <Button type="btLink" as="a" color="grey4" href={`#projects`}>
-        Projects
+        Projetos
       </Button>
       <Button type="btLink" as="a" color="grey4" href={`#contact`}>
-        Contact
+        Contato
       </Button>
       <Button type="btLink" as="a" color="grey4" href={`#social-media`}>
-        Social Media
+        Redes sociais
       </Button>
     </NavbarLinks>
   );
