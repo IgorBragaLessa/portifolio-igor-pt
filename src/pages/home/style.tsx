@@ -66,10 +66,20 @@ export const HeaderButtonsArea = styled(Flex, {
 });
 
 export const UserImage = styled("img", {
+  width: "clamp(48px, 6vw, 120px)",
+  height: "clamp(48px, 6vw, 120px)",
+
   borderRadius: "50%",
+  objectFit: "cover",
+
+  "@tablet": {
+    width: "90px",
+    height: "90px",
+  },
+
   "@mobile": {
-    width: "2.25rem",
-    height: "2.25rem",
+    width: "64px",
+    height: "64px",
   },
 });
 

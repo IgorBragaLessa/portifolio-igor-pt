@@ -13,11 +13,16 @@ export const { styled, globalCss, theme } = createStitches({
       grey4: "#F8F9FA",
       grey5: "#FFFFFF",
 
-      whiteFixed: "#FFFFFF",
-
       socialInstagram: "#CF50AC",
       socialFacebook: "#506CCF",
       socialLinkedin: "#0E76A8",
+
+      whiteFixed: "#FFFFFF",
+    },
+
+    sizes: {
+      container: "75rem",
+      containerTablet: "40rem",
     },
 
     space: {
@@ -42,16 +47,28 @@ export const { styled, globalCss, theme } = createStitches({
       title4: "1.25rem",
       text1: "1rem",
       text2: "0.875rem",
+
+      // mobile REAL (sem referência quebrada)
+      title1Mobile: "1.75rem",
+      title2Mobile: "1.5rem",
+    },
+
+    // 🔥 ESSENCIAL para corrigir desync visual
+    lineHeights: {
+      title1: "1.6",
+      title2: "1.3",
+      title3: "1.3",
+      title4: "1.4",
+      text1: "1.6",
+      text2: "1.6",
+
+      title1Mobile: "1.3",
+      title2Mobile: "1.3",
     },
 
     radii: {
       1: "0.5rem",
       2: "0.25rem",
-    },
-
-    sizes: {
-      container: "75rem",
-      containerTablet: "40rem",
     },
   },
 

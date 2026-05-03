@@ -3,7 +3,7 @@ import { Container, Flex } from "@/styles/Global";
 import dots from "@/public/static/img/background/dots.svg";
 
 export const Footer = styled("footer", {
-  backgroundColor: "$grey0",
+  backgroundColor: "$grey",
   padding: "7rem 0",
   backgroundImage: `url(${dots})`,
   backgroundRepeat: "no-repeat",

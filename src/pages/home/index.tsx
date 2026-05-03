@@ -37,15 +37,13 @@ export const Home = (): JSX.Element => {
                 src={`https://github.com/${userData.githubUser}.png`}
                 alt={userData.nameUser}
               />
-
-              <Text color="grey4">
+              <Text type="heading2" color="grey4">
                 Olá, meu nome é {userData.nameUser}
+                <Text as="div" type="heading3" color="brand1">
+                Eu amo criar e desenvolver projetos
+                </Text>
               </Text>
             </Flex>
-
-            <Text type="heading1" color="grey5">
-              Eu amo criar e desenvolver projetos
-            </Text>
 
             <Text type="body1" color="grey2">
               Portfólio de projetos e tecnologias

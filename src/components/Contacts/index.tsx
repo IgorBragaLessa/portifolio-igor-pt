@@ -21,13 +21,13 @@ export const Contacts = () => {
 
   const linkedInUrl = `https://www.linkedin.com/in/${userData.linkedinUser}`;
 
-  // ✅ CORREÇÃO: precisa do target para evitar erro em build
+ 
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [0.1, 0.9]);
+  const scale = useTransform(scrollYProgress, [0, 1], [0.9, 0.9]);
 
   return (
     <ContactSection id="contact">
