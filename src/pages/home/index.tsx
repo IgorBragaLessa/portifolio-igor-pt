@@ -1,20 +1,16 @@
-// Styles
 import { Container, Flex } from "@/styles/Global";
 import { Text } from "@/styles/Text";
 import { Button } from "@/styles/Buttons";
 
-// Components
 import { Stack } from "@/components/Stack";
 import { Project } from "@/components/Project";
 import { Contacts } from "@/components/Contacts";
 
-// Data
 import { stackData } from "@/utils/stackData";
 import { userData } from "@/utils/userData";
 
 import { FaGithub } from "react-icons/fa";
 
-// Page Style
 import {
   Header,
   HeaderContent,
@@ -40,65 +36,38 @@ export const Home = (): JSX.Element => {
               <UserImage
                 src={`https://github.com/${userData.githubUser}.png`}
                 alt={userData.nameUser}
-                title={userData.nameUser}
-                width={"48px"}
-                height={"48px"}
               />
+
               <Text color="grey4">
                 Olá, meu nome é {userData.nameUser}
               </Text>
             </Flex>
 
-            <Text as="h1" type="heading1" color="grey5">
-              Eu{" "}
-              <Text as="span" type="heading1" color="brand1">
-                amo
-              </Text>{" "}
-              criar e{" "}
-              <Text as="span" type="heading1" color="brand1">
-                desenvolver
-              </Text>{" "}
-              projetos
+            <Text type="heading1" color="grey5">
+              Eu amo criar e desenvolver projetos
             </Text>
 
             <Text type="body1" color="grey2">
-              Descubra aqui neste ambiente, criado especialmente para você,
-              todos os meus projetos e tecnologias
+              Portfólio de projetos e tecnologias
             </Text>
 
             <HeaderButtonsArea>
-              <Button as="a" type="primary" href="#projects">
+              <Button type="primary" as="a" href="#projects">
                 Ver projetos
               </Button>
 
-              <Button
-                as="a"
-                type="outline"
-                target="_blank"
-                href={portfolioUrl}
-              >
-                Ver código-fonte do meu portfólio
+              <Button as="a" type="outline" href={portfolioUrl}>
+                Código fonte
               </Button>
 
-              <Button
-                color="grey5"
-                as="a"
-                css={{ "&:hover": { color: "$grey1" } }}
-                type="circle"
-                target="_blank"
-                href={githubUrl}
-              >
+              <Button as="a" type="circle" href={githubUrl}>
                 <FaGithub />
               </Button>
             </HeaderButtonsArea>
 
             <StackCards>
               {stackData.map((stack, index) => (
-                <Stack
-                  key={index}
-                  title={stack.title}
-                  icon={stack.img}
-                />
+                <Stack key={index} title={stack.title} icon={stack.img} />
               ))}
             </StackCards>
           </HeaderContent>
@@ -109,15 +78,12 @@ export const Home = (): JSX.Element => {
         <Container>
           <ProjectAreaWrapperColumns>
             <ProjectsAreaSocialMediaMessage>
-              <Text as="h2" type="heading4" color="grey4">
+              <Text type="heading4" color="grey4">
                 Meus projetos
               </Text>
 
-              <Text as="p" type="body1" color="grey2">
-                Alguns dos meus{" "}
-                <Text as="span" color="brand5">
-                  projetos paralelos
-                </Text>
+              <Text type="body1" color="grey2">
+                Projetos paralelos
               </Text>
             </ProjectsAreaSocialMediaMessage>
 

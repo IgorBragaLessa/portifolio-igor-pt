@@ -1,59 +1,70 @@
-import { styled } from '@/styles/stitches.config';
-import { colors } from '@/styles/Global'
+import { styled } from "@/styles/stitches.config";
 
-const headingsDefaultConfig = {
-    fontFamily: "$titles"
-}
+const headingsDefault = {
+  fontFamily: "$title",
+  fontWeight: 700,
+};
 
-const bodyDefaultConfig = {
-    fontFamily: "$texts"
-}
+const bodyDefault = {
+  fontFamily: "$text",
+};
 
 export const Text = styled("p", {
-    color: "$grey1",
-    fontSize: "$text1",
-    fontWeight: 400,
-    variants: {
-        type: {
-            heading1: {
-                fontSize: "$title1",
-                lineHeight: "$title1",
-                fontWeight: 700,
-                ...headingsDefaultConfig,
-                "@mobile": {
-                    fontSize: "$title1Mobile",
-                    lineHeight: "$title1Mobile"
-                }
-            },
-            heading2: {
-                fontSize: "$title2",
-                lineHeight: "$title2",
-                fontWeight: 700,
-                ...headingsDefaultConfig
-            },
-            heading3: {
-                fontSize: "$title3",
-                lineHeight: "$title3",
-                fontWeight: 700,
-                ...headingsDefaultConfig
-            },
-            heading4: {
-                fontSize: "$title4",
-                lineHeight: "$title4",
-                fontWeight: 700,
-                ...headingsDefaultConfig
-            },
-            body1: {
-                fontSize: "$text1",
-                lineHeight: "$text1",
-                ...bodyDefaultConfig
-            },
-            body2: {
-                fontSize: "$text2",
-                lineHeight: "$text2",
-                ...bodyDefaultConfig
-            },
+  color: "$grey1",
+  fontSize: "$text1",
+  fontWeight: 400,
+
+  variants: {
+    type: {
+      heading1: {
+        fontSize: "$title1",
+        lineHeight: "1.2",
+        ...headingsDefault,
+
+        "@mobile": {
+          fontSize: "$title1Mobile",
         },
-        ...colors
-    }
-})
+      },
+
+      heading2: {
+        fontSize: "$title2",
+        lineHeight: "1.2",
+        ...headingsDefault,
+      },
+
+      heading3: {
+        fontSize: "$title3",
+        lineHeight: "1.2",
+        ...headingsDefault,
+      },
+
+      heading4: {
+        fontSize: "$title4",
+        lineHeight: "1.2",
+        ...headingsDefault,
+      },
+
+      body1: {
+        fontSize: "$text1",
+        lineHeight: "1.6",
+        ...bodyDefault,
+      },
+
+      body2: {
+        fontSize: "$text2",
+        lineHeight: "1.6",
+        ...bodyDefault,
+      },
+    },
+
+    color: {
+      brand1: { color: "$brand1" },
+      brand2: { color: "$brand2" },
+      grey1: { color: "$grey1" },
+      grey2: { color: "$grey2" },
+      grey3: { color: "$grey3" },
+      grey4: { color: "$grey4" },
+      grey5: { color: "$grey5" },
+    },
+  },
+});
