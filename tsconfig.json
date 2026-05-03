@@ -5,15 +5,10 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
 
-    "baseUrl": ".",
+    "baseUrl": "src",
 
     "paths": {
-      "@/*": ["src/*"],
-      "@/components/*": ["src/components/*"],
-      "@/styles/*": ["src/styles/*"],
-      "@/pages/*": ["src/pages/*"],
-      "@/utils/*": ["src/utils/*"],
-      "@/public/*": ["public/*"]
+      "@/*": ["*"]
     },
 
     "skipLibCheck": true,
