@@ -1,6 +1,6 @@
 import { Container } from "@/styles/Global";
 import { Text } from "@/styles/Text";
-import { motion, useTransform, useViewportScroll } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 import {
   ContactSection,
@@ -21,7 +21,12 @@ export const Contacts = () => {
 
   const linkedInUrl = `https://www.linkedin.com/in/${userData.linkedinUser}`;
 
-  const { scrollYProgress } = useViewportScroll();
+  // ✅ CORREÇÃO: precisa do target para evitar erro em build
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+
   const scale = useTransform(scrollYProgress, [0, 1], [0.1, 0.9]);
 
   return (
@@ -57,7 +62,7 @@ export const Contacts = () => {
                   color="grey2"
                   type="body2"
                   target="_blank"
-                  href={`https://api.whatsapp.com/send?phone=+55+${userData.whatsappNumber}&text=Ol%C3%A1%2C%20venho%20por%20meio%20do%20seu%20portf%C3%B3lio%20na%20internet%2C%20gostaria%20de%20conhecer%20melhor%20seus%20servi%C3%A7os`}
+                  href={`https://api.whatsapp.com/send?phone=55${userData.whatsappNumber}&text=Olá, venho por meio do seu portfólio, gostaria de conhecer seus serviços`}
                 >
                   Falar agora
                 </Text>
@@ -81,10 +86,7 @@ export const Contacts = () => {
                   color="grey2"
                   type="body2"
                   target="_blank"
-                  href={`mailto=${userData.emailUser}`}
-                  onClick={() =>
-                    (window.location.href = "mailto:igorbragalessa@gmail.com")
-                  }
+                  href={`mailto:${userData.emailUser}`}
                 >
                   Enviar e-mail
                 </Text>
@@ -100,7 +102,7 @@ export const Contacts = () => {
                   Meu LinkedIn
                 </Text>
                 <Text color="grey2" type="body2">
-                  Podemos criar conexões mais constantes, além de uma rede de compartilhamento
+                  Podemos criar conexões mais constantes e uma rede de compartilhamento
                 </Text>
                 <Text
                   as="a"

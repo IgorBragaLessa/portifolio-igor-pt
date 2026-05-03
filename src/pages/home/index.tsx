@@ -28,7 +28,7 @@ import {
 } from "./style";
 
 export const Home = (): JSX.Element => {
-  const gihubUrl = `https://github.com/${userData.githubUser}`;
+  const githubUrl = `https://github.com/${userData.githubUser}`;
   const portfolioUrl = `https://github.com/${userData.githubUser}/portifolio-igor-pt`;
 
   return (
@@ -44,7 +44,9 @@ export const Home = (): JSX.Element => {
                 width={"48px"}
                 height={"48px"}
               />
-              <Text color="grey4">Olá, meu nome é {userData.nameUser}</Text>
+              <Text color="grey4">
+                Olá, meu nome é {userData.nameUser}
+              </Text>
             </Flex>
 
             <Text as="h1" type="heading1" color="grey5">
@@ -60,7 +62,8 @@ export const Home = (): JSX.Element => {
             </Text>
 
             <Text type="body1" color="grey2">
-              Descubra aqui neste ambiente, criado especialmente para você, todos os meus projetos e tecnologias
+              Descubra aqui neste ambiente, criado especialmente para você,
+              todos os meus projetos e tecnologias
             </Text>
 
             <HeaderButtonsArea>
@@ -68,7 +71,12 @@ export const Home = (): JSX.Element => {
                 Ver projetos
               </Button>
 
-              <Button as="a" type="outline" target="_blank" href={portfolioUrl}>
+              <Button
+                as="a"
+                type="outline"
+                target="_blank"
+                href={portfolioUrl}
+              >
                 Ver código-fonte do meu portfólio
               </Button>
 
@@ -78,7 +86,7 @@ export const Home = (): JSX.Element => {
                 css={{ "&:hover": { color: "$grey1" } }}
                 type="circle"
                 target="_blank"
-                href={gihubUrl}
+                href={githubUrl}
               >
                 <FaGithub />
               </Button>
@@ -86,7 +94,11 @@ export const Home = (): JSX.Element => {
 
             <StackCards>
               {stackData.map((stack, index) => (
-                <Stack key={index} title={stack.title} icon={stack.img} />
+                <Stack
+                  key={index}
+                  title={stack.title}
+                  icon={stack.img}
+                />
               ))}
             </StackCards>
           </HeaderContent>
