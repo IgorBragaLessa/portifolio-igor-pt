@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
 import { globalStyles } from "@/styles/Global";
 import { Home } from "@/pages/home";
 import { NavBar } from "@/components/Navbar";
