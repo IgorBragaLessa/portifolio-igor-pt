@@ -11,6 +11,7 @@ export default defineConfig({
     },
   },
 
-  
-  base: "/portifolio-igor-pt/",
+  base: process.env.NODE_ENV === "production"
+    ? "/portifolio-igor-pt/"
+    : "/",
 });
