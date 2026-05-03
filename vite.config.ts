@@ -4,14 +4,12 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
-
-  base: process.env.NODE_ENV === "production"
+  base: process.env.GITHUB_PAGES === "true"
     ? "/portifolio-igor-pt/"
     : "/",
 });
