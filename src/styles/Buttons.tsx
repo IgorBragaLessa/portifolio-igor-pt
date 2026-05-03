@@ -11,7 +11,7 @@ export const Button = styled("button", {
   borderRadius: "$1",
   cursor: "pointer",
   fontSize: "1rem",
-  fontFamily: "$text",
+  fontFamily: "$texts",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -38,14 +38,15 @@ export const Button = styled("button", {
 
         "@mobile": {
           height: "2.5rem",
+          minHeight: "2.5rem",
           borderRadius: "0.5rem",
         },
       },
 
       outline: {
+        backgroundColor: "transparent",
         borderColor: "$grey4",
         color: "$grey4",
-        backgroundColor: "transparent",
 
         "&:hover": {
           backgroundColor: "$grey4",
@@ -56,7 +57,7 @@ export const Button = styled("button", {
       icon: {
         borderColor: "$grey1",
         backgroundColor: "$grey1",
-        padding: "0 1rem",
+        paddingInline: "1rem",
 
         "& svg": {
           fill: "$grey2",
@@ -71,9 +72,15 @@ export const Button = styled("button", {
         borderColor: "$grey5",
         backgroundColor: "transparent",
         borderRadius: "50%",
-        padding: 0,
+        padding: "0",
         width: "2.75rem",
         height: "2.75rem",
+        minWidth: "2.75rem",
+        minHeight: "2.75rem",
+
+        "& + a": {
+          marginLeft: "$2",
+        },
 
         "&:hover": {
           backgroundColor: "$grey5",
@@ -85,10 +92,6 @@ export const Button = styled("button", {
           borderRadius: "0.5rem",
         },
       },
-    },
-
-    darkMode: {
-      true: {},
     },
   },
 });

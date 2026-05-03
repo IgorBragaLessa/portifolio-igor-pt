@@ -1,75 +1,47 @@
-import { globalCss, styled } from "@stitches/react";
-import { createTheme } from "@stitches/react";
+import { ReactNode } from "react";
+import { styled, globalCss, theme } from "@/styles/stitches.config";
 
-/* =========================
-   THEME (Stitches)
-========================= */
-export const theme = createTheme({
-  colors: {
-    brand1: "#623CEA",
-    brand2: "#311E75",
+interface GlobalStyleProps {
+  children: ReactNode;
+}
 
-    grey1: "#121214",
-    grey2: "#868E96",
-    grey3: "#E9ECEF",
-    grey4: "#F8F9FA",
-    grey5: "#F8F9FA",
-
-    whiteFixed: "#ffffff",
-  },
-
-  space: {
-    1: "0.5rem",
-    2: "1rem",
-    3: "2rem",
-    4: "3rem",
-    5: "4rem",
-  },
-
-  sizes: {
-    container: "75rem",
-    containerTablet: "40rem",
-  },
-
-  radii: {
-    1: "0.5rem",
-    2: "0.25rem",
-  },
-
-  fonts: {
-    text: "Inter, sans-serif",
-    title: "IBM Plex Sans, sans-serif",
-  },
-});
-
-/* =========================
-   GLOBAL CSS
-========================= */
+/* =======================
+   GLOBAL STYLES
+======================= */
 export const globalStyles = globalCss({
   "*": {
     margin: 0,
     padding: 0,
     boxSizing: "border-box",
-    fontFamily: "$text",
+    fontFamily: "$texts",
+  },
+
+  html: {
+    scrollBehavior: "smooth",
   },
 
   body: {
-    backgroundColor: "$grey1",
+    backgroundColor: "$grey0",
+    color: "$grey4",
   },
 
   a: {
     textDecoration: "none",
-    color: "inherit",
   },
 });
 
-/* =========================
-   COMPONENTS BASE
-========================= */
+/* =======================
+   LAYOUT COMPONENTS
+======================= */
+
 export const Container = styled("div", {
   maxWidth: "$container",
   margin: "0 auto",
   padding: "0 1rem",
+
+  "@tablet": {
+    maxWidth: "$containerTablet",
+  },
 });
 
 export const Flex = styled("div", {
@@ -79,5 +51,25 @@ export const Flex = styled("div", {
 });
 
 export const Box = styled("div", {
-  width: "100%",
+  maxWidth: "100%",
 });
+
+/* =======================
+   APP WRAPPER
+======================= */
+const AppWrapper = styled("div", {
+  minHeight: "100vh",
+});
+
+/* =======================
+   PROVIDER VISUAL (SEM GLOBAL THEME COMPONENT)
+======================= */
+export const GlobalStyle = ({ children }: GlobalStyleProps) => {
+  globalStyles();
+
+  return (
+    <AppWrapper className={theme}>
+      {children}
+    </AppWrapper>
+  );
+};
