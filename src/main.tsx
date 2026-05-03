@@ -6,7 +6,7 @@ import { Home } from "@/pages/home";
 import { NavBar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
-globalStyles(); // 👈 ISSO AQUI é o CSS global
+globalStyles(); 
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
